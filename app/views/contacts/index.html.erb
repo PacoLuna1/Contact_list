@@ -12,12 +12,9 @@
             <div class="col-md-3 " >
               <%= image_tag('Contact_Icon.png', size: "100") %>
             </div>
-            <div class="col-md-3 text-left ">
-
-              <p><%= contact.name %></p>
-              <p><%= contact.company %></p>
-
-
+            <div class="col-md-3 text-left " style="margin-top:20px;">
+              <h4 style="font-family: 'Merriweather';"><%= contact.name %></h4>
+              <p class="text-muted"><%= contact.company %></p>
             </div>
             <div class="col-md-6 row "  style="display:flex;justify-content: flex-end;padding-right:0;">
                 <%= link_to edit_contact_path(contact),method: :get, class: " btn btn-success ", style:"padding:6px;margin-right:2px;" do %>
