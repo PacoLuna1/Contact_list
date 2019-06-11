@@ -1,52 +1,47 @@
   <div class="container ">
     <p id="notice"><%= notice %></p>
+    <div class="container btn btn-danger col-md-12 ">
+      <h1 class="text-center">Contact List</h1>
 
-    <h1 class="text-center">Contact List</h1>
+    </div>
 
-
-
-      <tbody>
         <% @contacts.each do |contact| %>
         <%= button_to contact_path(contact) ,method: :get, class:"container btn btn-default col-md-6", style:"height:200px;" do %>
           <div class="col-md-12">
             <div class="col-md-3 " >
               <%= image_tag('Contact_Icon.png', size: "100") %>
             </div>
-            <div class="col-md-3 text-left " style="margin-top:20px;">
-              <h4 style="font-family: 'Merriweather';"><%= contact.name %></h4>
+            <div class="col-md-3 text-left mt-20" >
+              <h4 class="font-merri"><%= contact.name %></h4>
               <p class="text-muted"><%= contact.company %></p>
             </div>
-            <div class="col-md-6 row "  style="display:flex;justify-content: flex-end;padding-right:0;">
-                <%= link_to edit_contact_path(contact),method: :get, class: " btn btn-success ", style:"padding:6px;margin-right:2px;" do %>
-                  <i class="fa fa-pencil col-sm-2 " style="color:white;"></i>
+            <div class="col-md-6 row contact-list-btn" >
+                <%= link_to edit_contact_path(contact),method: :get, class: " btn btn-success btn-padding mr-2" do %>
+                  <i class="fa fa-pencil col-sm-2 fa-icons-color"></i>
                 <%end%>
-                <%= link_to (contact), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",style:"padding:6px;" do %>
-                  <i class="fa fa-close col-sm-2 " style=" color:white;"></i>
+                <%= link_to (contact), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-padding" do %>
+                  <i class="fa fa-close col-sm-2 fa-icons-color"></i>
                 <%end%>
             </div>
           </div>
           <div class="col-md-12 ">
             <hr>
             <div class="col-md-4 row">
-              <i class="fa fa-mobile col-sm-2 " style="padding:3px;"></i>
+              <i class="fa fa-mobile col-sm-2 fa-padding" ></i>
               <p class="col-sm-8"><%= contact.cellphone %></p>
             </div>
             <div class="col-md-4">
-              <i class="fa fa-phone col-sm-2 "style="padding:3px;"></i>
+              <i class="fa fa-phone col-sm-2 fa-padding "></i>
               <p class="col-sm-8"><%= contact.phone %></p>
             </div>
             <div class="col-md-4">
-              <i class="fa fa-envelope col-sm-2 "style="padding:3px;"></i>
+              <i class="fa fa-envelope col-sm-2 fa-padding"></i>
               <p class="col-sm-8"><%= contact.email %></p>
             </div>
           </div>
         <%end%>
       <% end %>
-      <%= button_to new_contact_path,method: :get,class:"col-md-6 btn btn-default", style:"display:flex;justify-content: center; align-items: center; height:200px;" do%>
+      <%= button_to new_contact_path,method: :get,class:"col-md-6 btn btn-default new-contact-btn" do%>
       <i class="fa fa-plus"></i>
       <% end %>
-
-
-
-
   </div>

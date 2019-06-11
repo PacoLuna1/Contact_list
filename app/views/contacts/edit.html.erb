@@ -1,13 +1,15 @@
-<div class="container " style="margin-top:100px;">
-   <div class="card-header btn btn-primary col-md-12 ">
+<div class="container mt-100" >
+   <div class="card-header btn btn-danger col-md-12 ">
      <h1>Editing Contact</h1>
    </div>
 
-  <div class=" "style="width: 100%;">
+  <div class="full-container">
     <br>
     <%= render 'form', contact: @contact %>
 
-    <%= link_to 'Back', contacts_path %>
+    <%= link_to  contacts_path,method: :get, class: " btn btn-danger  ", style:"padding:6px;" do %>
+    <i class="fa fa-arrow-left col-sm-2 " style="color:white;"></i>
+    <%end%>
   </div>
 
 </div>

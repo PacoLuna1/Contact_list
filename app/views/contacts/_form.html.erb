@@ -1,21 +1,17 @@
 <div class="">
   <%= form_with(model: contact, local: true) do |form| %>
-  <% if contact.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-    <ul>
-      <% contact.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
+  <div class="col-md-12">
+    <% @contact.errors.full_messages.each do |message| %> <!--representacion de cadena de texto en palabras sobre errores-->
+    <button type="button"  class="btn-danger error-btn"><%= message %></button>
+    <!--mensaje de error-->
+    <%end%>
   </div>
-  <% end %>
 
   <div class="field col-md-12">
     <div class="row">
       <br>
-      <i class="fa fa-user  btn btn-info  col-sm-1 center"></i>
+      <i class="fa fa-user  btn btn-danger  col-sm-1 center"></i>
       <div class="col-sm-11">
         <%= form.text_field :name , class: 'form-control form-control-lg', placeholder:"Name" %>
         <br>
@@ -25,7 +21,7 @@
 
   <div class="field col-md-12 ">
     <div class="row">
-      <i class="fa fa-building-o  btn btn-info  col-sm-1 center" ></i>
+      <i class="fa fa-building-o  btn btn-danger  col-sm-1 center" ></i>
       <div class="col-sm-11">
           <%= form.text_field :company, class: 'form-control form-control-lg', placeholder:"Company" %>
         <br>
@@ -34,7 +30,7 @@
   </div>
   <div class="field col-md-12 ">
     <div class="row">
-      <i class="fa fa-mobile  btn btn-info  col-sm-1 center" ></i>
+      <i class="fa fa-mobile  btn btn-danger  col-sm-1 center" ></i>
       <div class="col-sm-11">
         <%= form.number_field :cellphone, class: 'form-control form-control-lg', placeholder:"Cellphone" %>
         <br>
@@ -44,7 +40,7 @@
 
   <div class="field col-md-12">
     <div class="row">
-      <i class="fa fa-phone  btn btn-info  col-sm-1 center" ></i>
+      <i class="fa fa-phone  btn btn-danger  col-sm-1 center" ></i>
       <div class="col-sm-11">
         <%= form.number_field :phone, class: 'form-control form-control-lg', placeholder:"Phone" %>
         <br>
@@ -54,7 +50,7 @@
 
   <div class="field col-md-12">
     <div class="row">
-      <i class="fa fa-envelope  btn btn-info  col-sm-1 center"></i>
+      <i class="fa fa-envelope  btn btn-danger  col-sm-1 center"></i>
       <div class="col-sm-11">
         <%= form.text_field :email, class: 'form-control form-control-lg', placeholder:"Email" %>
         <br>
@@ -64,7 +60,7 @@
 
   <div class="actions col-12">
 
-    <%= form.submit :Send, class: 'btn btn-primary btn-lg btn-block' %>
+    <%= form.submit :Send, class: 'btn btn-danger btn-lg btn-block' %>
   </div>
   <% end %>
 

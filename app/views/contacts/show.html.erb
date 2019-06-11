@@ -1,28 +1,40 @@
 <p id="notice"><%= notice %></p>
+<div class="container btn-danger contact-full-info">
+  <div class="col-md-8">
+    <div class="col-md-3 ">
+    <%= image_tag('user_contact.jpg', size: "90x100") %>
+    </div>
+    <div class="col-md-8 text-left " >
+      <h1 style="margin-top:0px;font-family: 'Roboto Slab', serif;"><%= @contact.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+      <h3 style="margin-top:0px;font-family: 'Playfair Display', serif;"><%= @contact.company %></h3>
 
-<p>
-  <strong>Company:</strong>
-  <%= @contact.company %>
-</p>
-<p>
-  <strong>Cellphone:</strong>
-  <%= @contact.cellphone %>
-</p>
+    </div>
+  </div>
+  <div class="col-md-4 text-left"style="border-left: 1px solid ;">
+    <p>
+      <strong>Cellphone:</strong>
+      <%= @contact.cellphone %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @contact.phone %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @contact.phone %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @contact.email %>
+    </p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+
+  </div>
+</div>
+<div class="container btn btn-default justify-content-between row contact-full-info-btn">
+  <%= link_to  contacts_path,method: :get, class: " btn btn-danger  ", style:"padding:6px;" do %>
+  <i class="fa fa-arrow-left col-sm-2 " style="color:white;"></i>
+  <%end%>
+  <%= link_to edit_contact_path(@contact),method: :get, class: " btn btn-success  ", style:"padding:6px;margin-left:660px;" do %>
+    <i class="fa fa-pencil col-sm-2 " style="color:white;"></i>
+  <%end%>
+</div>
